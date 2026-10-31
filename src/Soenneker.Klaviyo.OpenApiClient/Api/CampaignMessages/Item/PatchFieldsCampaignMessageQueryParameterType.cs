@@ -88,6 +88,10 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.CampaignMessages.Item
         #pragma warning disable CS1591
         DefinitionTracking_optionsIs_tracking_opens,
         #pragma warning restore CS1591
+        [EnumMember(Value = "definition.tracking_options.tracking_params")]
+        #pragma warning disable CS1591
+        DefinitionTracking_optionsTracking_params,
+        #pragma warning restore CS1591
         [EnumMember(Value = "id")]
         #pragma warning disable CS1591
         Id,

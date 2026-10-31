@@ -71,7 +71,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.AgeGate"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.BackInStockEmailConsentCheckbox"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Button"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Checkboxes"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.ContinueWithShop"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CountdownTimer"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Coupon"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CustomHTML"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.DateObject"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Dropdown"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Email"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.HTMLText"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Image"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.MarketingTrackingConsentCheckbox"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.OptInCode"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.PhoneNumber"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.RadioButtons"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Review"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.SignupCounter"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.SMSConsentCheckbox"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.SMSDisclosure"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.SpinToWin"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Text"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.AgeGate"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.BackInStockEmailConsentCheckbox"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Button"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Checkboxes"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.ContinueWithShop"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CountdownTimer"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Coupon"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CustomHTML"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.DateObject"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Dropdown"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Email"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.HTMLText"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Image"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.MarketingTrackingConsentCheckbox"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.OptInCode"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.PhoneNumber"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.RadioButtons"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Review"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.ScratchCard"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.SignupCounter"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.SMSConsentCheckbox"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.SMSDisclosure"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.SpinToWin"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Text"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RowV0_blocks : IComposedTypeWrapper, IParsable
@@ -220,6 +220,14 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
 #else
             public global::Soenneker.Klaviyo.OpenApiClient.Models.Review Review { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.ScratchCard"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Klaviyo.OpenApiClient.Models.ScratchCard? ScratchCard { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Klaviyo.OpenApiClient.Models.ScratchCard ScratchCard { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.SignupCounter"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -350,6 +358,10 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
                 {
                     result.SMSDisclosure = new global::Soenneker.Klaviyo.OpenApiClient.Models.SMSDisclosure();
                 }
+                else if("ScratchCard".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ScratchCard = new global::Soenneker.Klaviyo.OpenApiClient.Models.ScratchCard();
+                }
                 else if("SignupCounter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SignupCounter = new global::Soenneker.Klaviyo.OpenApiClient.Models.SignupCounter();
@@ -441,6 +453,10 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
                 else if(Review != null)
                 {
                     return Review.GetFieldDeserializers();
+                }
+                else if(ScratchCard != null)
+                {
+                    return ScratchCard.GetFieldDeserializers();
                 }
                 else if(SignupCounter != null)
                 {
@@ -542,6 +558,10 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
                 else if(Review != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.Review>(null, Review);
+                }
+                else if(ScratchCard != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.ScratchCard>(null, ScratchCard);
                 }
                 else if(SignupCounter != null)
                 {

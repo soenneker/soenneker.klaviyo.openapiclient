@@ -404,6 +404,10 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
         #pragma warning disable CS1591
         AmericaCosta_Rica,
         #pragma warning restore CS1591
+        [EnumMember(Value = "America/Coyhaique")]
+        #pragma warning disable CS1591
+        AmericaCoyhaique,
+        #pragma warning restore CS1591
         [EnumMember(Value = "America/Creston")]
         #pragma warning disable CS1591
         AmericaCreston,
