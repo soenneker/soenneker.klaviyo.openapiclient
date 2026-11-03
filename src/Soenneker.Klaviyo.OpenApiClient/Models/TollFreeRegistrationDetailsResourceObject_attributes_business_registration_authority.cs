@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Klaviyo.OpenApiClient.Models
 {
-    /// <summary>Authority that issued the business registration number. Required unless the business is a US sole proprietor without a registration number.</summary>
+    /// <summary>Authority that issued the business registration number. Required unless the business is a sole proprietor without a registration number.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TollFreeRegistrationDetailsResourceObject_attributes_business_registration_authority
     {

@@ -63,6 +63,10 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
         #pragma warning disable CS1591
         KLAVIYO,
         #pragma warning restore CS1591
+        [EnumMember(Value = "KVYO_GROW")]
+        #pragma warning disable CS1591
+        KVYO_GROW,
+        #pragma warning restore CS1591
         [EnumMember(Value = "LIBRARY")]
         #pragma warning disable CS1591
         LIBRARY,

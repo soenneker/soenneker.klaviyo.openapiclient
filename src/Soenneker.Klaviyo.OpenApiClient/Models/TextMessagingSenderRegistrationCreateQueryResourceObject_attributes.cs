@@ -30,9 +30,9 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
 #else
         public string BusinessName { get; set; }
 #endif
-        /// <summary>Authority that issued the business registration number. Required unless the business is a US sole proprietor without a registration number.</summary>
+        /// <summary>Authority that issued the business registration number. Required unless the business is a sole proprietor without a registration number.</summary>
         public global::Soenneker.Klaviyo.OpenApiClient.Models.TextMessagingSenderRegistrationCreateQueryResourceObject_attributes_business_registration_authority? BusinessRegistrationAuthority { get; set; }
-        /// <summary>ISO 3166-1 alpha-2 country in which the business is registered. Required for all businesses; must be `US` for a sole proprietor omitting the registration authority and number.</summary>
+        /// <summary>ISO 3166-1 alpha-2 country in which the business is registered. Required for all businesses, including a sole proprietor omitting the registration authority and number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessRegistrationCountry { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
 #else
         public string BusinessRegistrationCountry { get; set; }
 #endif
-        /// <summary>Business registration number. Required unless the business is a US sole proprietor.</summary>
+        /// <summary>Business registration number. Required unless the business is a sole proprietor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessRegistrationNumber { get; set; }
