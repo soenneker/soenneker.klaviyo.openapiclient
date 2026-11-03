@@ -2,7 +2,7 @@
   "descriptionHash": "68DC2D6AB1DBED2E484B6AFD7BB98705D2E97739938EFF910021BDC068D5D1C4DD670FF8A7A828CCDB5CD9E478AF142A51A200BAE87BC5ADD61B4A67CDCFABE2",
   "descriptionLocation": "../../openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.37.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "KlaviyoOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Klaviyo.OpenApiClient",
