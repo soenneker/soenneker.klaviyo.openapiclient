@@ -18,7 +18,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
         public global::Soenneker.Klaviyo.OpenApiClient.Models.ABTestSettings_winner_metric? WinnerMetric { get; set; }
         /// <summary>The percentage of the audience that receives the winning variation. The remainder is split evenly across the variations under test.</summary>
         public int? WinnerPercentage { get; set; }
-        /// <summary>How long to collect results before picking a winner, in hours.</summary>
+        /// <summary>How long to collect results before picking a winner, in hours. New values may be at most 264 (11 days).</summary>
         public int? WinnerWaitHours { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.ABTestSettings"/> and sets the default values.

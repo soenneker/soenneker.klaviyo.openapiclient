@@ -16,5 +16,13 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.PushTokens.Item.Profile
         #pragma warning disable CS1591
         Predictive_analytics,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hashed_email")]
+        #pragma warning disable CS1591
+        Hashed_email,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hashed_phone_number")]
+        #pragma warning disable CS1591
+        Hashed_phone_number,
+        #pragma warning restore CS1591
     }
 }

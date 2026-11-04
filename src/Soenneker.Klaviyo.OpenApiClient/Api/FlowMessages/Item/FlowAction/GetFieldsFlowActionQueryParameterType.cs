@@ -32,6 +32,10 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.FlowMessages.Item.FlowAction
         #pragma warning disable CS1591
         DefinitionDataBranches,
         #pragma warning restore CS1591
+        [EnumMember(Value = "definition.data.code_function_id")]
+        #pragma warning disable CS1591
+        DefinitionDataCode_function_id,
+        #pragma warning restore CS1591
         [EnumMember(Value = "definition.data.concluded_experiment_id")]
         #pragma warning disable CS1591
         DefinitionDataConcluded_experiment_id,

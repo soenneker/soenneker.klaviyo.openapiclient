@@ -40,6 +40,22 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
+        /// <summary>Lowercase hex SHA-256 hash of the individual&apos;s email address, trimmed and lowercased before hashing</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HashedEmail { get; set; }
+#nullable restore
+#else
+        public string HashedEmail { get; set; }
+#endif
+        /// <summary>Lowercase hex SHA-256 hash of the individual&apos;s phone number, reduced to its digits with leading zeros removed before hashing</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HashedPhoneNumber { get; set; }
+#nullable restore
+#else
+        public string HashedPhoneNumber { get; set; }
+#endif
         /// <summary>URL pointing to the location of a profile image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +169,8 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "external_id", n => { ExternalId = n.GetStringValue(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
+                { "hashed_email", n => { HashedEmail = n.GetStringValue(); } },
+                { "hashed_phone_number", n => { HashedPhoneNumber = n.GetStringValue(); } },
                 { "image", n => { Image = n.GetStringValue(); } },
                 { "last_event_date", n => { LastEventDate = n.GetDateTimeOffsetValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
@@ -178,6 +196,8 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("external_id", ExternalId);
             writer.WriteStringValue("first_name", FirstName);
+            writer.WriteStringValue("hashed_email", HashedEmail);
+            writer.WriteStringValue("hashed_phone_number", HashedPhoneNumber);
             writer.WriteStringValue("image", Image);
             writer.WriteDateTimeOffsetValue("last_event_date", LastEventDate);
             writer.WriteStringValue("last_name", LastName);

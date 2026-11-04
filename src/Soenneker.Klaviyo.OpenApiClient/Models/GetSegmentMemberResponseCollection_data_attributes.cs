@@ -14,6 +14,22 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Lowercase hex SHA-256 hash of the individual&apos;s email address, trimmed and lowercased before hashing</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HashedEmail { get; set; }
+#nullable restore
+#else
+        public string HashedEmail { get; set; }
+#endif
+        /// <summary>Lowercase hex SHA-256 hash of the individual&apos;s phone number, reduced to its digits with leading zeros removed before hashing</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HashedPhoneNumber { get; set; }
+#nullable restore
+#else
+        public string HashedPhoneNumber { get; set; }
+#endif
         /// <summary>The predictive_analytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,6 +71,8 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "hashed_email", n => { HashedEmail = n.GetStringValue(); } },
+                { "hashed_phone_number", n => { HashedPhoneNumber = n.GetStringValue(); } },
                 { "predictive_analytics", n => { PredictiveAnalytics = n.GetObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.PredictiveAnalytics>(global::Soenneker.Klaviyo.OpenApiClient.Models.PredictiveAnalytics.CreateFromDiscriminatorValue); } },
                 { "subscriptions", n => { Subscriptions = n.GetObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.Subscriptions>(global::Soenneker.Klaviyo.OpenApiClient.Models.Subscriptions.CreateFromDiscriminatorValue); } },
             };
@@ -66,6 +84,8 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("hashed_email", HashedEmail);
+            writer.WriteStringValue("hashed_phone_number", HashedPhoneNumber);
             writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.PredictiveAnalytics>("predictive_analytics", PredictiveAnalytics);
             writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.Subscriptions>("subscriptions", Subscriptions);
             writer.WriteAdditionalData(AdditionalData);

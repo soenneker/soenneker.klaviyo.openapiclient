@@ -92,7 +92,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.Lists.Item.Profiles
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProfilesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Request additional fields not included by default in the response. Supported values: &apos;subscriptions&apos;, &apos;predictive_analytics&apos;</summary>
+            /// <summary>Request additional fields not included by default in the response. Supported values: &apos;subscriptions&apos;, &apos;predictive_analytics&apos;, &apos;hashed_email&apos;, &apos;hashed_phone_number&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("additional%2Dfields%5Bprofile%5D")]

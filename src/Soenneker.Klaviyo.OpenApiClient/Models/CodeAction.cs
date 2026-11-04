@@ -17,10 +17,10 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Data { get; set; }
+        public global::Soenneker.Klaviyo.OpenApiClient.Models.CodeActionData? Data { get; set; }
 #nullable restore
 #else
-        public UntypedNode Data { get; set; }
+        public global::Soenneker.Klaviyo.OpenApiClient.Models.CodeActionData Data { get; set; }
 #endif
         /// <summary>The real ID of an action. Not allowed on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.CodeActionData>(global::Soenneker.Klaviyo.OpenApiClient.Models.CodeActionData.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "links", n => { Links = n.GetObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.Link>(global::Soenneker.Klaviyo.OpenApiClient.Models.Link.CreateFromDiscriminatorValue); } },
                 { "temporary_id", n => { TemporaryId = n.GetStringValue(); } },
@@ -87,7 +87,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.CodeActionData>("data", Data);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.Link>("links", Links);
             writer.WriteStringValue("temporary_id", TemporaryId);

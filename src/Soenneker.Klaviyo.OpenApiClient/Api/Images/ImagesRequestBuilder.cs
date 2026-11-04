@@ -72,7 +72,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.Images
             return await RequestAdapter.SendAsync<global::Soenneker.Klaviyo.OpenApiClient.Models.GetImageResponseCollection>(requestInfo, global::Soenneker.Klaviyo.OpenApiClient.Models.GetImageResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Import an image from a url or data uri.If you want to upload an image from a file, use the Upload Image From File endpoint instead.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `3/s`&lt;br&gt;Steady: `100/m`&lt;br&gt;Daily: `100/d`**Scopes:**`images:write`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/upload_image_from_url.json)
+        /// Import an image from a url or data uri.If you want to upload an image from a file, use the Upload Image From File endpoint instead.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `3/s`&lt;br&gt;Steady: `100/m`&lt;br&gt;Daily: `500/d`**Scopes:**`images:write`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/upload_image_from_url.json)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.PostImageResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +118,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.Images
             return requestInfo;
         }
         /// <summary>
-        /// Import an image from a url or data uri.If you want to upload an image from a file, use the Upload Image From File endpoint instead.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `3/s`&lt;br&gt;Steady: `100/m`&lt;br&gt;Daily: `100/d`**Scopes:**`images:write`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/upload_image_from_url.json)
+        /// Import an image from a url or data uri.If you want to upload an image from a file, use the Upload Image From File endpoint instead.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `3/s`&lt;br&gt;Steady: `100/m`&lt;br&gt;Daily: `500/d`**Scopes:**`images:write`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/upload_image_from_url.json)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -192,7 +192,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.Images
             public global::Soenneker.Klaviyo.OpenApiClient.Api.Images.GetSortQueryParameterType? Sort { get; set; }
         }
         /// <summary>
-        /// Import an image from a url or data uri.If you want to upload an image from a file, use the Upload Image From File endpoint instead.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `3/s`&lt;br&gt;Steady: `100/m`&lt;br&gt;Daily: `100/d`**Scopes:**`images:write`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/upload_image_from_url.json)
+        /// Import an image from a url or data uri.If you want to upload an image from a file, use the Upload Image From File endpoint instead.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `3/s`&lt;br&gt;Steady: `100/m`&lt;br&gt;Daily: `500/d`**Scopes:**`images:write`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/upload_image_from_url.json)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ImagesRequestBuilderPostQueryParameters 
