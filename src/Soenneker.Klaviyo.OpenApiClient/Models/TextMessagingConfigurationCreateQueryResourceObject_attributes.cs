@@ -14,7 +14,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Branding prefix prepended to outbound messages for sender identification. Up to 50 characters.</summary>
+        /// <summary>Branding prefix prepended to outbound messages for sender identification. Up to 50 characters. HTML is removed before the prefix is saved. A prefix that is empty once HTML is removed, or that contains a link, is rejected with `invalid_org_prefix`, unless the account is approved to use links in its prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrgPrefix { get; set; }

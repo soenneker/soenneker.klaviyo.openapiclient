@@ -24,7 +24,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
 #else
         public string OptOutLanguage { get; set; }
 #endif
-        /// <summary>Branding prefix prepended to outbound messages for sender identification. Up to 50 characters.</summary>
+        /// <summary>Branding prefix prepended to outbound messages for sender identification, as saved with any HTML removed. Up to 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrgPrefix { get; set; }

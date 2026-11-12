@@ -120,6 +120,18 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.ProfileImport
         #pragma warning disable CS1591
         Predictive_analyticsChurn_probability,
         #pragma warning restore CS1591
+        [EnumMember(Value = "predictive_analytics.discount_affinity")]
+        #pragma warning disable CS1591
+        Predictive_analyticsDiscount_affinity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "predictive_analytics.discount_affinity.is_control")]
+        #pragma warning disable CS1591
+        Predictive_analyticsDiscount_affinityIs_control,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "predictive_analytics.discount_affinity.predicted_rank")]
+        #pragma warning disable CS1591
+        Predictive_analyticsDiscount_affinityPredicted_rank,
+        #pragma warning restore CS1591
         [EnumMember(Value = "predictive_analytics.expected_date_of_next_order")]
         #pragma warning disable CS1591
         Predictive_analyticsExpected_date_of_next_order,

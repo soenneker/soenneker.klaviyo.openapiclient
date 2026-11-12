@@ -34,7 +34,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.Campaigns.Item.Relationships.Tags
         {
         }
         /// <summary>
-        /// Returns the IDs of all tags associated with the given campaign.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `3/s`&lt;br&gt;Steady: `60/m`**Scopes:**`campaigns:read``tags:read`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/get_tag_ids_for_campaign.json)
+        /// Get all tag [relationships](https://developers.klaviyo.com/en/reference/api_overview#relationships) for the given campaign ID.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `3/s`&lt;br&gt;Steady: `60/m`**Scopes:**`campaigns:read``tags:read`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/get_tag_ids_for_campaign.json)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.GetCampaignTagsRelationshipsResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.Campaigns.Item.Relationships.Tags
             return await RequestAdapter.SendAsync<global::Soenneker.Klaviyo.OpenApiClient.Models.GetCampaignTagsRelationshipsResponseCollection>(requestInfo, global::Soenneker.Klaviyo.OpenApiClient.Models.GetCampaignTagsRelationshipsResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the IDs of all tags associated with the given campaign.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `3/s`&lt;br&gt;Steady: `60/m`**Scopes:**`campaigns:read``tags:read`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/get_tag_ids_for_campaign.json)
+        /// Get all tag [relationships](https://developers.klaviyo.com/en/reference/api_overview#relationships) for the given campaign ID.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `3/s`&lt;br&gt;Steady: `60/m`**Scopes:**`campaigns:read``tags:read`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/get_tag_ids_for_campaign.json)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -20,6 +20,14 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
         public double? AverageOrderValue { get; set; }
         /// <summary>Probability the customer has churned</summary>
         public double? ChurnProbability { get; set; }
+        /// <summary>The discount_affinity property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Klaviyo.OpenApiClient.Models.DiscountAffinityPredictiveAnalytics? DiscountAffinity { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Klaviyo.OpenApiClient.Models.DiscountAffinityPredictiveAnalytics DiscountAffinity { get; set; }
+#endif
         /// <summary>Expected date of next order, as calculated at the time of their most recent order</summary>
         public DateTimeOffset? ExpectedDateOfNextOrder { get; set; }
         /// <summary>Total value of all historically placed orders</summary>
@@ -68,6 +76,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
                 { "average_days_between_orders", n => { AverageDaysBetweenOrders = n.GetDoubleValue(); } },
                 { "average_order_value", n => { AverageOrderValue = n.GetDoubleValue(); } },
                 { "churn_probability", n => { ChurnProbability = n.GetDoubleValue(); } },
+                { "discount_affinity", n => { DiscountAffinity = n.GetObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.DiscountAffinityPredictiveAnalytics>(global::Soenneker.Klaviyo.OpenApiClient.Models.DiscountAffinityPredictiveAnalytics.CreateFromDiscriminatorValue); } },
                 { "expected_date_of_next_order", n => { ExpectedDateOfNextOrder = n.GetDateTimeOffsetValue(); } },
                 { "historic_clv", n => { HistoricClv = n.GetDoubleValue(); } },
                 { "historic_number_of_orders", n => { HistoricNumberOfOrders = n.GetDoubleValue(); } },
@@ -87,6 +96,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
             writer.WriteDoubleValue("average_days_between_orders", AverageDaysBetweenOrders);
             writer.WriteDoubleValue("average_order_value", AverageOrderValue);
             writer.WriteDoubleValue("churn_probability", ChurnProbability);
+            writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.DiscountAffinityPredictiveAnalytics>("discount_affinity", DiscountAffinity);
             writer.WriteDateTimeOffsetValue("expected_date_of_next_order", ExpectedDateOfNextOrder);
             writer.WriteDoubleValue("historic_clv", HistoricClv);
             writer.WriteDoubleValue("historic_number_of_orders", HistoricNumberOfOrders);

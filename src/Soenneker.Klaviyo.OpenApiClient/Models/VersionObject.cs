@@ -164,7 +164,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.AfterCloseTimeout"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.BackInStock"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CartContent"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CartItemCount"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CartProduct"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CartValue"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Channel"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CustomJavascript"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Delay"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Device"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.ExitIntent"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.IdentifiedProfiles"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.ListsAndSegments"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Location"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.PageVisits"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.PreviouslySubmitted"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.ProfileEventTracked"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Scroll"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.UnidentifiedProfiles"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.URLPatterns"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.AfterCloseTimeout"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.BackInStock"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CartContent"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CartItemCount"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CartProduct"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CartValue"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Channel"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.CustomJavascript"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Delay"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Device"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.ExitIntent"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.FormEngagement"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.IdentifiedProfiles"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.ListsAndSegments"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Location"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.PageVisits"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.PreviouslySubmitted"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.ProfileEventTracked"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.Scroll"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.UnidentifiedProfiles"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.URLPatterns"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Version_triggers : IComposedTypeWrapper, IParsable
@@ -256,6 +256,14 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.Klaviyo.OpenApiClient.Models.ExitIntent ExitIntent { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.FormEngagement"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Klaviyo.OpenApiClient.Models.FormEngagement? FormEngagement { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Klaviyo.OpenApiClient.Models.FormEngagement FormEngagement { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.IdentifiedProfiles"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -383,6 +391,10 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
                 {
                     result.ExitIntent = new global::Soenneker.Klaviyo.OpenApiClient.Models.ExitIntent();
                 }
+                else if("FormEngagement".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.FormEngagement = new global::Soenneker.Klaviyo.OpenApiClient.Models.FormEngagement();
+                }
                 else if("IdentifiedProfiles".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.IdentifiedProfiles = new global::Soenneker.Klaviyo.OpenApiClient.Models.IdentifiedProfiles();
@@ -470,6 +482,10 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
                 else if(ExitIntent != null)
                 {
                     return ExitIntent.GetFieldDeserializers();
+                }
+                else if(FormEngagement != null)
+                {
+                    return FormEngagement.GetFieldDeserializers();
                 }
                 else if(IdentifiedProfiles != null)
                 {
@@ -559,6 +575,10 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
                 else if(ExitIntent != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.ExitIntent>(null, ExitIntent);
+                }
+                else if(FormEngagement != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.FormEngagement>(null, FormEngagement);
                 }
                 else if(IdentifiedProfiles != null)
                 {
