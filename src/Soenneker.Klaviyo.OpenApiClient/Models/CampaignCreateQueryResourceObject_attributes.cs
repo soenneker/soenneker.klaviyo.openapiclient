@@ -14,7 +14,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Audiences to create on this campaign. Each references a message via audience_temporary_id.</summary>
+        /// <summary>Audiences to create on this campaign. At least one is required. Each audience has a temporary_id that messages reference through audience_temporary_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Klaviyo.OpenApiClient.Models.AudienceInlineCreate>? Audiences { get; set; }

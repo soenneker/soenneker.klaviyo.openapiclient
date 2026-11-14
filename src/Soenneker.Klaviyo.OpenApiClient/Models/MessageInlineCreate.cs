@@ -14,7 +14,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Must match a temporary_id in the definition.audiences array.</summary>
+        /// <summary>Must match a temporary_id in the attributes.audiences array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AudienceTemporaryId { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
 #endif
         /// <summary>Smart sending throttling configuration for this message</summary>
         public global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate_throttling_type? ThrottlingType { get; set; }
-        /// <summary>Inline variations for this message. Default variation created if omitted.</summary>
+        /// <summary>Inline variations for this message. If omitted, the message has no variation; add one with the create campaign variation endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Klaviyo.OpenApiClient.Models.VariationInlineCreate>? Variations { get; set; }
