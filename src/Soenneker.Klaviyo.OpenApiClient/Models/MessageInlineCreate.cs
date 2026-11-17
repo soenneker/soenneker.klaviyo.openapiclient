@@ -34,6 +34,14 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
 #endif
         /// <summary>Smart sending throttling configuration for this message</summary>
         public global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate_throttling_type? ThrottlingType { get; set; }
+        /// <summary>Custom UTM tracking parameters for this message. Each entry is a static or dynamic parameter. Requires at least one variation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate.MessageInlineCreate_tracking_params>? TrackingParams { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate.MessageInlineCreate_tracking_params> TrackingParams { get; set; }
+#endif
         /// <summary>Inline variations for this message. If omitted, the message has no variation; add one with the create campaign variation endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +79,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
                 { "is_add_utm", n => { IsAddUtm = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "throttling_type", n => { ThrottlingType = n.GetEnumValue<global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate_throttling_type>(); } },
+                { "tracking_params", n => { TrackingParams = n.GetCollectionOfObjectValues<global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate.MessageInlineCreate_tracking_params>(global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate.MessageInlineCreate_tracking_params.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "variations", n => { Variations = n.GetCollectionOfObjectValues<global::Soenneker.Klaviyo.OpenApiClient.Models.VariationInlineCreate>(global::Soenneker.Klaviyo.OpenApiClient.Models.VariationInlineCreate.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -85,8 +94,84 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
             writer.WriteBoolValue("is_add_utm", IsAddUtm);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate_throttling_type>("throttling_type", ThrottlingType);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate.MessageInlineCreate_tracking_params>("tracking_params", TrackingParams);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Klaviyo.OpenApiClient.Models.VariationInlineCreate>("variations", Variations);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.DynamicMessageTrackingParam"/>, <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.StaticMessageTrackingParam"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class MessageInlineCreate_tracking_params : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.DynamicMessageTrackingParam"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Klaviyo.OpenApiClient.Models.DynamicMessageTrackingParam? DynamicMessageTrackingParam { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Klaviyo.OpenApiClient.Models.DynamicMessageTrackingParam DynamicMessageTrackingParam { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.StaticMessageTrackingParam"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Klaviyo.OpenApiClient.Models.StaticMessageTrackingParam? StaticMessageTrackingParam { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Klaviyo.OpenApiClient.Models.StaticMessageTrackingParam StaticMessageTrackingParam { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate.MessageInlineCreate_tracking_params"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate.MessageInlineCreate_tracking_params CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Klaviyo.OpenApiClient.Models.MessageInlineCreate.MessageInlineCreate_tracking_params();
+                if("DynamicMessageTrackingParam".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.DynamicMessageTrackingParam = new global::Soenneker.Klaviyo.OpenApiClient.Models.DynamicMessageTrackingParam();
+                }
+                else if("StaticMessageTrackingParam".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.StaticMessageTrackingParam = new global::Soenneker.Klaviyo.OpenApiClient.Models.StaticMessageTrackingParam();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(DynamicMessageTrackingParam != null)
+                {
+                    return DynamicMessageTrackingParam.GetFieldDeserializers();
+                }
+                else if(StaticMessageTrackingParam != null)
+                {
+                    return StaticMessageTrackingParam.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(DynamicMessageTrackingParam != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.DynamicMessageTrackingParam>(null, DynamicMessageTrackingParam);
+                }
+                else if(StaticMessageTrackingParam != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.StaticMessageTrackingParam>(null, StaticMessageTrackingParam);
+                }
+            }
         }
     }
 }

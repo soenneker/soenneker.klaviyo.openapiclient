@@ -52,7 +52,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.CampaignAudiences.Item
         {
         }
         /// <summary>
-        /// Delete the campaign audience with the given ID.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `10/s`&lt;br&gt;Steady: `150/m`**Scopes:**`campaigns:write`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/delete_campaign_audience.json)
+        /// Delete the campaign audience with the given ID.This also deletes every draft message in the audience. To keep a message, clone it to another audience before you delete this one. If the audience has a message that is not a draft, the request fails with a 400 and nothing is deleted.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `10/s`&lt;br&gt;Steady: `150/m`**Scopes:**`campaigns:write`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/delete_campaign_audience.json)
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Api.CampaignAudiences.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Klaviyo.OpenApiClient.Models.PatchAudienceResponse>(requestInfo, global::Soenneker.Klaviyo.OpenApiClient.Models.PatchAudienceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the campaign audience with the given ID.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `10/s`&lt;br&gt;Steady: `150/m`**Scopes:**`campaigns:write`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/delete_campaign_audience.json)
+        /// Delete the campaign audience with the given ID.This also deletes every draft message in the audience. To keep a message, clone it to another audience before you delete this one. If the audience has a message that is not a draft, the request fails with a 400 and nothing is deleted.&lt;br&gt;&lt;br&gt;*Rate limits*:&lt;br&gt;Burst: `10/s`&lt;br&gt;Steady: `150/m`**Scopes:**`campaigns:write`[OpenAPI Spec](https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable/apis/delete_campaign_audience.json)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
