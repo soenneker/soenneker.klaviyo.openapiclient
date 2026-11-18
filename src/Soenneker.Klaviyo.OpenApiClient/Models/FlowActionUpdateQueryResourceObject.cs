@@ -30,6 +30,14 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The relationships property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Klaviyo.OpenApiClient.Models.FlowActionUpdateQueryResourceObject_relationships? Relationships { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Klaviyo.OpenApiClient.Models.FlowActionUpdateQueryResourceObject_relationships Relationships { get; set; }
+#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Klaviyo.OpenApiClient.Models.FlowActionEnum? Type { get; set; }
         /// <summary>
@@ -59,6 +67,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
             {
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.FlowActionUpdateQueryResourceObject_attributes>(global::Soenneker.Klaviyo.OpenApiClient.Models.FlowActionUpdateQueryResourceObject_attributes.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "relationships", n => { Relationships = n.GetObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.FlowActionUpdateQueryResourceObject_relationships>(global::Soenneker.Klaviyo.OpenApiClient.Models.FlowActionUpdateQueryResourceObject_relationships.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Klaviyo.OpenApiClient.Models.FlowActionEnum>(); } },
             };
         }
@@ -71,6 +80,7 @@ namespace Soenneker.Klaviyo.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.FlowActionUpdateQueryResourceObject_attributes>("attributes", Attributes);
             writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Klaviyo.OpenApiClient.Models.FlowActionUpdateQueryResourceObject_relationships>("relationships", Relationships);
             writer.WriteEnumValue<global::Soenneker.Klaviyo.OpenApiClient.Models.FlowActionEnum>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
